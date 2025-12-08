@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+#status {
+    margin: 10px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #004d40; /* Dark Teal */
+}
+
+#message {
+    margin: 5px 0 20px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+#chess-board {
+    /* Creates an 8x8 grid */
+    display: grid;
+    grid-template-columns: repeat(8, 70px); 
+    grid-template-rows: repeat(8, 70px);    
+    border: 5px solid #222;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.square {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px; /* Size for Unicode piece symbols */
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease;
+}
+
+/* Color for the dark squares (Greenish) */
+.square.dark {
+    background-color: #769656;
+}
+
+/* Color for the light squares (Cream) */
+.square.light {
+    background-color: #eeeed2;
+}
+
+/* Highlight for the currently selected piece */
+.square.selected {
+    background-color: #baca44; /* Bright Green highlight */
+    outline: 3px solid #f9f91a;
+}
+
+/* Styling for the piece characters (Unicode) */
+.piece {
+    font-family: "Segoe UI Symbol", "Noto Sans Symbols", sans-serif;
+    line-height: 1;
+}
+
+/* White pieces (Uppercase in the backend) */
+.piece.white {
+    color: #fff; 
+    text-shadow: 1px 1px 2px #333;
+}
+
+/* Black pieces (Lowercase in the backend) */
+.piece.black {
+    color: #222;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+/* Checkmate king highlight */
+.checkmate-king {
+    background-color: #ff0000 !important; /* Red background */
+    border: 3px solid #cc0000; /* Darker red border */
+}

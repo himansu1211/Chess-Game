@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chess Game </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Basic Web Chess</h1>
+
+    <div id="mode-selection">
+        <button id="pass-play-btn">Pass and Play with Friends</button>
+        <button id="vs-computer-btn">Play vs Computer</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <div id="status">White to move.</div>
+        <div id="message">Click a piece to select it, then click an empty square or an enemy piece to move.</div>
+
+        <div id="chess-board">
+        </div>
+
+        <button id="reset-btn">New Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
