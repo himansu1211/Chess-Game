@@ -4,33 +4,75 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #dbe6e4 0%, #b7c6d8 100%);
+    min-height: 100vh;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 24px 28px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    text-align: center;
+    animation: fadeIn 0.9s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-12px);}
+    to   { opacity: 1; transform: translateY(0);}
 }
 
 h1 {
     color: #333;
+    font-size: 2.3em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(170,200,120,0.15);
 }
 
-#status {
-    margin: 10px 0;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #004d40; /* Dark Teal */
+.header-description {
+    color: #607d8b;
+    font-size: 1.15em;
+    margin-bottom: 16px;
 }
 
-#message {
-    margin: 5px 0 20px 0;
-    font-size: 1em;
-    color: #666;
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 12px 0 15px 0;
 }
 
+.button-main {
+    background: linear-gradient(90deg, #769656 45%, #baca44 100%);
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 10px 32px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(170,200,120,0.22);
+    transition: background 0.2s, transform 0.12s;
+    outline: none;
+}
+.button-main:hover, .button-main:focus {
+    background: linear-gradient(90deg, #baca44 35%, #769656 100%);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Board Section (Unchanged for context) */
 #chess-board {
-    /* Creates an 8x8 grid */
     display: grid;
     grid-template-columns: repeat(8, 70px); 
     grid-template-rows: repeat(8, 70px);    
     border: 5px solid #222;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
 }
 
 .square {
@@ -39,7 +81,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 48px; /* Size for Unicode piece symbols */
+    font-size: 48px;
     cursor: pointer;
     user-select: none;
     transition: background-color 0.15s ease;
@@ -57,7 +99,7 @@ h1 {
 
 /* Highlight for the currently selected piece */
 .square.selected {
-    background-color: #baca44; /* Bright Green highlight */
+    background-color: #baca44;
     outline: 3px solid #f9f91a;
 }
 
@@ -69,7 +111,7 @@ h1 {
 
 /* White pieces (Uppercase in the backend) */
 .piece.white {
-    color: #fff; 
+    color: #fff;
     text-shadow: 1px 1px 2px #333;
 }
 
@@ -81,6 +123,15 @@ h1 {
 
 /* Checkmate king highlight */
 .checkmate-king {
-    background-color: #ff0000 !important; /* Red background */
-    border: 3px solid #cc0000; /* Darker red border */
+    background-color: #ff0000 !important;
+    border: 3px solid #cc0000;
+}
+
+/* Extra: Footer */
+.footer {
+    color: #666;
+    margin: 40px 0 12px 0;
+    font-size: 0.95em;
+    text-align: center;
+    opacity: 0.65;
 }
